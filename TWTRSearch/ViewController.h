@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate,UIAlertViewDelegate, UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *searchResultTableView;
+@property (weak, nonatomic) IBOutlet UITextField *txtSearchField;
 
+- (IBAction)GetTweetsForSearchText:(id)sender;
 
 @end
 

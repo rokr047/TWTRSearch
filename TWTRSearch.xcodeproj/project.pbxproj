@@ -15,6 +15,10 @@
 		20BD57271A8DB827004CB97F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20BD57261A8DB827004CB97F /* Images.xcassets */; };
 		20BD572A1A8DB827004CB97F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20BD57281A8DB827004CB97F /* LaunchScreen.xib */; };
 		20BD57361A8DB827004CB97F /* TWTRSearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD57351A8DB827004CB97F /* TWTRSearchTests.m */; };
+		20BD57401A8DBF19004CB97F /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20BD573F1A8DBF19004CB97F /* Accounts.framework */; };
+		20BD57421A8DBF25004CB97F /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20BD57411A8DBF25004CB97F /* Social.framework */; };
+		20BD57451A8DEB9A004CB97F /* SavedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20BD57441A8DEB9A004CB97F /* SavedViewController.m */; };
+		20BD57471A8E08BD004CB97F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20BD57461A8E08BD004CB97F /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +46,11 @@
 		20BD572F1A8DB827004CB97F /* TWTRSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TWTRSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20BD57341A8DB827004CB97F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20BD57351A8DB827004CB97F /* TWTRSearchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWTRSearchTests.m; sourceTree = "<group>"; };
+		20BD573F1A8DBF19004CB97F /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		20BD57411A8DBF25004CB97F /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		20BD57431A8DEB75004CB97F /* SavedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SavedViewController.h; sourceTree = "<group>"; };
+		20BD57441A8DEB9A004CB97F /* SavedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavedViewController.m; sourceTree = "<group>"; };
+		20BD57461A8E08BD004CB97F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +58,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20BD57471A8E08BD004CB97F /* CoreData.framework in Frameworks */,
+				20BD57421A8DBF25004CB97F /* Social.framework in Frameworks */,
+				20BD57401A8DBF19004CB97F /* Accounts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +77,9 @@
 		20BD570A1A8DB826004CB97F = {
 			isa = PBXGroup;
 			children = (
+				20BD57461A8E08BD004CB97F /* CoreData.framework */,
+				20BD57411A8DBF25004CB97F /* Social.framework */,
+				20BD573F1A8DBF19004CB97F /* Accounts.framework */,
 				20BD57151A8DB827004CB97F /* TWTRSearch */,
 				20BD57321A8DB827004CB97F /* TWTRSearchTests */,
 				20BD57141A8DB827004CB97F /* Products */,
@@ -92,6 +107,8 @@
 				20BD57281A8DB827004CB97F /* LaunchScreen.xib */,
 				20BD571D1A8DB827004CB97F /* TWTRSearch.xcdatamodeld */,
 				20BD57161A8DB827004CB97F /* Supporting Files */,
+				20BD57431A8DEB75004CB97F /* SavedViewController.h */,
+				20BD57441A8DEB9A004CB97F /* SavedViewController.m */,
 			);
 			path = TWTRSearch;
 			sourceTree = "<group>";
@@ -226,6 +243,7 @@
 				20BD571F1A8DB827004CB97F /* TWTRSearch.xcdatamodeld in Sources */,
 				20BD57221A8DB827004CB97F /* ViewController.m in Sources */,
 				20BD57191A8DB827004CB97F /* main.m in Sources */,
+				20BD57451A8DEB9A004CB97F /* SavedViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +434,7 @@
 				20BD573B1A8DB827004CB97F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		20BD573C1A8DB827004CB97F /* Build configuration list for PBXNativeTarget "TWTRSearchTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +443,7 @@
 				20BD573E1A8DB827004CB97F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
