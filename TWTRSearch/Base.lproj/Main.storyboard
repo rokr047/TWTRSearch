@@ -123,24 +123,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="P4u-lC-Pwa">
-                                <rect key="frame" x="0.0" y="64" width="600" height="516"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="P4u-lC-Pwa">
+                                <rect key="frame" x="0.0" y="72" width="600" height="520"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="savedCellID" textLabel="w8u-z6-Pka" detailTextLabel="mWe-N1-BAf" style="IBUITableViewCellStyleSubtitle" id="CmV-Ns-Osw">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="savedCellID" textLabel="w8u-z6-Pka" style="IBUITableViewCellStyleDefault" id="CmV-Ns-Osw">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CmV-Ns-Osw" id="LyM-SR-eOS">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="w8u-z6-Pka">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mWe-N1-BAf">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="11"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -157,9 +151,22 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="a39-51-F02" firstAttribute="top" secondItem="P4u-lC-Pwa" secondAttribute="bottom" constant="20" id="0jp-DD-yZr"/>
+                            <constraint firstItem="P4u-lC-Pwa" firstAttribute="leading" secondItem="au7-TB-tc2" secondAttribute="leadingMargin" constant="-16" id="2Rb-jH-c27"/>
                             <constraint firstAttribute="trailingMargin" secondItem="P4u-lC-Pwa" secondAttribute="trailing" constant="-16" id="OJ2-i1-svw"/>
+                            <constraint firstItem="a39-51-F02" firstAttribute="top" secondItem="P4u-lC-Pwa" secondAttribute="bottom" constant="8" id="OhD-Z2-YEC"/>
                             <constraint firstItem="P4u-lC-Pwa" firstAttribute="leading" secondItem="au7-TB-tc2" secondAttribute="leadingMargin" constant="-16" id="Shy-dD-F4Q"/>
+                            <constraint firstItem="a39-51-F02" firstAttribute="top" secondItem="P4u-lC-Pwa" secondAttribute="bottom" id="YPe-jD-FJE"/>
+                            <constraint firstItem="P4u-lC-Pwa" firstAttribute="top" secondItem="7gQ-bs-K4i" secondAttribute="bottom" id="fnI-m6-iif"/>
+                            <constraint firstItem="P4u-lC-Pwa" firstAttribute="top" secondItem="7gQ-bs-K4i" secondAttribute="bottom" constant="8" id="hqP-tL-sW0"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Shy-dD-F4Q"/>
+                                <exclude reference="fnI-m6-iif"/>
+                                <exclude reference="0jp-DD-yZr"/>
+                                <exclude reference="YPe-jD-FJE"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="savedTweetTableView" destination="P4u-lC-Pwa" id="ZH1-5V-kcA"/>

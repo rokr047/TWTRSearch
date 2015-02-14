@@ -198,21 +198,35 @@ typedef NS_ENUM(NSUInteger, RKRTwitterSearchState)
         }];
         
         UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Save" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-            NSLog(@"Save tweet...");
+            
+            NSManagedObjectContext *context = [self managedObjectContext];
+            
+            //Create a new saveTweet
+            NSManagedObject *saveTweet = [NSEntityDescription insertNewObjectForEntityForName:@"SavedTweets" inManagedObjectContext:context];
+            
+            NSNumber *id = @(1);
+            
+            [saveTweet setValue:id forKey:@"id"];
+            [saveTweet setValue:self.txtSearchField.text forKey:@"searchText"];
+            
+            NSDictionary *tweet = (self.tweetArray)[indexPath.row];
+            NSDictionary *tweetUserData = [tweet objectForKey:@"user"];
+            
+            [saveTweet setValue:tweet[@"text"] forKey:@"tweet"];
+            [saveTweet setValue:tweetUserData[@"screen_name"] forKey:@"screenName"];
+            
+            // invode the save method to commit the change
+            NSError *error = nil;
+            // Save the context
+            if (![context save:&error]) {
+                NSLog(@"Tweet Save Failed! %@ %@", error, [error localizedDescription]);
+            }
         }];
         
         [actionSheet addAction:defaultAction];
         [actionSheet addAction:cancelAction];
         
         [self presentViewController:actionSheet animated:YES completion:nil];
-        
-        //NSManagedObjectContext *context = [self managedObjectContext];
-        
-        // Create a new saveTweet
-        //NSManagedObject *saveTweet = [NSEntityDescription insertNewObjectForEntityForName:@"SavedTweets" inManagedObjectContext:context];
-        //[saveTweet setValue:textFieldMake.text forKey:@"id"];
-        //[saveTweet setValue:textFieldModel.text forKey:@"searchText"];
-        //[saveTweet setValue:textFieldColor.text forKey:@"tweet"];
     }
 }
 

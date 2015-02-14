@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
 @interface SavedViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 - (IBAction)SavedDoneButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *savedTweetTableView;
+@property (strong) NSMutableArray *savedTweets;
 
 @end
