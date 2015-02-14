@@ -190,26 +190,29 @@ typedef NS_ENUM(NSUInteger, RKRTwitterSearchState)
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if(self.searchState == RKRTwitterSearchStateLoaded) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Save Tweet" message:@"Do you want to save this tweet?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
-        [alert show];
-    }
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if (buttonIndex == 0){
-        //do nothing
-        NSLog(@"No action.");
-    } else if(buttonIndex == 1) {
-        // Save that note to core data.
-        NSLog(@"Saving the tweet...");
+        // Action sheet style.
+        UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"Save Tweet" message:@"Do you want to save this tweet to your phone?" preferredStyle:UIAlertControllerStyleActionSheet];
         
-        NSManagedObjectContext *context = [self managedObjectContext];
+        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+            NSLog(@"Do nothing...");
+        }];
+        
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Save" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            NSLog(@"Save tweet...");
+        }];
+        
+        [actionSheet addAction:defaultAction];
+        [actionSheet addAction:cancelAction];
+        
+        [self presentViewController:actionSheet animated:YES completion:nil];
+        
+        //NSManagedObjectContext *context = [self managedObjectContext];
         
         // Create a new saveTweet
-        NSManagedObject *saveTweet = [NSEntityDescription insertNewObjectForEntityForName:@"SavedTweets" inManagedObjectContext:context];
-        [saveTweet setValue:textFieldMake.text forKey:@"id"];
-        [saveTweet setValue:textFieldModel.text forKey:@"searchText"];
-        [saveTweet setValue:textFieldColor.text forKey:@"tweet"];
+        //NSManagedObject *saveTweet = [NSEntityDescription insertNewObjectForEntityForName:@"SavedTweets" inManagedObjectContext:context];
+        //[saveTweet setValue:textFieldMake.text forKey:@"id"];
+        //[saveTweet setValue:textFieldModel.text forKey:@"searchText"];
+        //[saveTweet setValue:textFieldColor.text forKey:@"tweet"];
     }
 }
 
