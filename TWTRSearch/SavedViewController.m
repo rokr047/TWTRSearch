@@ -60,18 +60,19 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSLog(@"# of rows : %i", [self.savedTweets count]);
-    
     if([self.savedTweets count] < 1) {
         static NSString *cellID =  @"savedCellID" ;
         UITableViewCell *cell = [self.savedTweetTableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
         [cell.textLabel setText:@"You have not saved any tweets yet."];
+        return cell;
     }
     
     static NSString *cellID =  @"savedCellID" ;
     UITableViewCell *cell = [self.savedTweetTableView dequeueReusableCellWithIdentifier:cellID forIndexPath:indexPath];
     NSManagedObject *tweet = [self.savedTweets objectAtIndex:indexPath.row];
     [cell.textLabel setText:[NSString stringWithFormat:@"@%@:\n%@\n--\nsearch term : %@", [tweet valueForKey:@"screenName"], [tweet valueForKey:@"tweet"], [tweet valueForKey:@"searchText"]]];
+    
+    cell.textLabel.numberOfLines = 0;
     return cell;
 }
 
